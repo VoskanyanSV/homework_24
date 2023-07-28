@@ -26,43 +26,55 @@ from datetime import datetime
 # print(week_day(year, month, day))
 
 
-# # HW24.3
-#
-# def arab_to_roma(num):
-#     roma = ""
-#     while num > 0:
-#         if num >= 1000:
-#             roma += "M" * (num // 1000)
-#             num %= 1000
-#         elif num >= 500:
-#             roma += "D"
-#             num %= 500
-#         elif num >= 100:
-#             roma += "C" * (num // 100)
-#             num %= 100
-#         elif num >= 50:
-#             roma += "L"
-#             num %= 50
-#         elif num >= 10:
-#             roma += "X" * (num // 10)
-#             num %= 10
-#         elif num == 9:
-#             roma += "IX"
-#             num -= 9
-#         elif num >= 5:
-#             roma += "V"
-#             num -= 5
-#         elif num == 4:
-#             roma += "IV"
-#             num -= 4
-#         else:
-#             roma += "I" * num
-#             num %= 1
-#     return roma
-#
-#
-# print(arab_to_roma(524))
-#
+# HW24.3
+
+def arab_to_roma(num):
+    roma = ""
+    while num > 0:
+        if num >= 1000:
+            roma += "M" * (num // 1000)
+            num %= 1000
+        elif num >= 900:
+            roma += "CM"
+            num -= 900
+        elif num >= 500:
+            roma += "D"
+            num %= 500
+        elif num >= 400:
+            roma += "CD"
+            num -= 400
+        elif num >= 100:
+            roma += "C" * (num // 100)
+            num %= 100
+        elif num >= 90:
+            roma += "XC"
+            num -= 90
+        elif num >= 50:
+            roma += "L"
+            num %= 50
+        elif num >= 40:
+            roma += "XL"
+            num -= 40
+        elif num >= 10:
+            roma += "X" * (num // 10)
+            num %= 10
+        elif num == 9:
+            roma += "IX"
+            num -= 9
+        elif num >= 5:
+            roma += "V"
+            num -= 5
+        elif num == 4:
+            roma += "IV"
+            num -= 4
+        else:
+            roma += "I" * num
+            num = 0
+    return roma
+
+
+print(arab_to_roma(1944))
+
 
 
 
